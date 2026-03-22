@@ -4,6 +4,8 @@
  */
 export function normalizeUnicode(text: string): string {
   return text
+    .replace(/^\uFEFF/, '') // strip UTF-8 BOM
+    .replace(/[\u200B-\u200D\u2060]/g, '') // zero-width spaces / word joiner
     .replace(/\u2014/g, '-') // em dash → hyphen
     .replace(/\u2013/g, '-') // en dash → hyphen
     .replace(/[\u201C\u201D]/g, '"') // smart double quotes → straight
@@ -14,10 +16,12 @@ export function normalizeUnicode(text: string): string {
 
 /**
  * Strip markdown code fences from a string.
- * Handles ```json, ```, and bare code fences.
+ * Handles ```json, ```jsonc, ```js, and bare code fences.
  */
 export function stripMarkdownCodeBlock(text: string): string {
-  const fenced = text.match(/```(?:json|JSON)?\s*\n?([\s\S]*?)\n?\s*```/)
+  const fenced = text.match(
+    /```(?:json|jsonc|javascript|js|typescript|ts)?[^\S\r\n]*\r?\n?([\s\S]*?)\r?\n?[^\S\r\n]*```/i,
+  )
   if (fenced?.[1]) {
     return fenced[1].trim()
   }

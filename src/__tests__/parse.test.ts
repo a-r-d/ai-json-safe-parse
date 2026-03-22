@@ -45,6 +45,18 @@ describe('aiJsonParse', () => {
       expect(result).toEqual({ success: true, data: { ok: true } })
     })
 
+    it('extracts JSON from ```jsonc blocks', () => {
+      const input = '```jsonc\r\n{"ok": true}\r\n```'
+      const result = aiJsonParse(input)
+      expect(result).toEqual({ success: true, data: { ok: true } })
+    })
+
+    it('extracts JSON from ```javascript blocks', () => {
+      const input = '```javascript\n{"answer": 42}\n```'
+      const result = aiJsonParse(input)
+      expect(result).toEqual({ success: true, data: { answer: 42 } })
+    })
+
     it('handles text surrounding code blocks', () => {
       const input = 'Here is the result:\n```json\n{"answer": 42}\n```\nHope that helps!'
       const result = aiJsonParse(input)
@@ -73,6 +85,18 @@ describe('aiJsonParse', () => {
 
     it('replaces non-breaking spaces', () => {
       const input = '{"key":\u00A0"value"}'
+      const result = aiJsonParse(input)
+      expect(result).toEqual({ success: true, data: { key: 'value' } })
+    })
+
+    it('strips a UTF-8 BOM at the start of input', () => {
+      const input = '\uFEFF{"key": "value"}'
+      const result = aiJsonParse(input)
+      expect(result).toEqual({ success: true, data: { key: 'value' } })
+    })
+
+    it('removes zero-width characters that break parsing', () => {
+      const input = '{\u200B"key"\u200B:\u200B"value"\u200B}'
       const result = aiJsonParse(input)
       expect(result).toEqual({ success: true, data: { key: 'value' } })
     })

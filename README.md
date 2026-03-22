@@ -106,8 +106,8 @@ The parser applies recovery strategies in order, from safest to most aggressive:
 | Strategy | Mode | What it handles |
 |---|---|---|
 | Direct `JSON.parse` | both | Already-valid JSON |
-| Markdown extraction | both | `` ```json ... ``` `` and `` ``` ... ``` `` code blocks |
-| Unicode normalization | both | Smart quotes `\u201C\u201D\u2018\u2019`, em/en dashes `\u2014\u2013`, non-breaking spaces, ellipsis `\u2026` |
+| Markdown extraction | both | `` ```json ... ``` ``, `` ```jsonc ... ``` ``, `` ```js ... ``` ``, and bare code blocks |
+| Unicode normalization | both | UTF-8 BOM, zero-width chars, smart quotes `\u201C\u201D\u2018\u2019`, em/en dashes `\u2014\u2013`, non-breaking spaces, ellipsis `\u2026` |
 | Bracket matching | both | JSON embedded in prose: *"Here is the result: `{...}` hope that helps!"* |
 | Comment removal | aggressive | `// line comments` and `/* block comments */` (preserves URLs) |
 | Trailing comma removal | aggressive | `{"a": 1,}` and `[1, 2,]` |
@@ -193,7 +193,7 @@ Both ESM (`import`) and CommonJS (`require`) are supported via the `exports` fie
 
 ## Background
 
-This library was extracted from the production codebase at [LeadTruffle](https://leadtruffle.com), where we use it to parse thousands of AI-generated JSON responses daily across our lead qualification, SMS automation, and voice AI pipelines. We run it in AWS Lambda (Node.js), Cloudflare Workers, and in-browser — so it had to be lightweight, dependency-free, and universal from day one.
+This library was extracted from the production codebase at [LeadTruffle](https://www.leadtruffle.co), where we use it to parse thousands of AI-generated JSON responses daily across our lead qualification, SMS automation, and voice AI pipelines. We run it in AWS Lambda (Node.js), Cloudflare Workers, and in-browser — so it had to be lightweight, dependency-free, and universal from day one.
 
 After copy-pasting variations of this code across multiple services, it made sense to clean it up and share it. Thank you to LeadTruffle for supporting the open-source release.
 
@@ -240,7 +240,7 @@ Please keep PRs focused — one fix or feature per PR.
 
 **Aaron Decker** — [ard.ninja](https://ard.ninja) / [@a-r-d](https://github.com/a-r-d)
 
-CTO at [LeadTruffle](https://leadtruffle.com), a speed-to-lead platform for home service businesses. I've been a software engineer for 15+ years. After writing the same JSON-from-LLM parsing code across too many services, I decided to open source it. If you're building AI-powered products and burning time on malformed JSON, I hope this saves you some headaches.
+CTO at [LeadTruffle](https://www.leadtruffle.co), a speed-to-lead platform for home service businesses. I've been a software engineer for 15+ years. After writing the same JSON-from-LLM parsing code across too many services, I decided to open source it. If you're building AI-powered products and burning time on malformed JSON, I hope this saves you some headaches.
 
 ## License
 
