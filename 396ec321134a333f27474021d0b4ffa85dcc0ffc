@@ -1,0 +1,23 @@
+package.json
+  0a3a4ceefeb38ceb 7-14,17,20,24-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.17",
+  "base_commit_sha": "396ec321134a333f27474021d0b4ffa85dcc0ffc",
+  "prompts": {
+    "0a3a4ceefeb38ceb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "47b1dc2e-c835-4c26-81d2-1d03e0340500",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "aaron decker <aaron@ard.ninja>",
+      "messages": [],
+      "total_additions": 16,
+      "total_deletions": 4,
+      "accepted_lines": 16,
+      "overriden_lines": 0
+    }
+  }
+}
