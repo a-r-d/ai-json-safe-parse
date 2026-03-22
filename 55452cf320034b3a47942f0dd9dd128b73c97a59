@@ -1,0 +1,27 @@
+src/sanitize.ts
+  36a5ba1cb1510023 7-8,19,22-24
+src/__tests__/parse.test.ts
+  36a5ba1cb1510023 48-59,91-99
+README.md
+  36a5ba1cb1510023 109-110,196,243
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.17",
+  "base_commit_sha": "55452cf320034b3a47942f0dd9dd128b73c97a59",
+  "prompts": {
+    "36a5ba1cb1510023": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019d15d4-5bbc-7031-91ac-f54ae22255fd",
+        "model": "gpt-5.4"
+      },
+      "human_author": "aaron decker <aaron@ard.ninja>",
+      "messages": [],
+      "total_additions": 34,
+      "total_deletions": 6,
+      "accepted_lines": 34,
+      "overriden_lines": 0
+    }
+  }
+}
