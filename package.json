@@ -1,6 +1,6 @@
 {
   "name": "ai-json-safe-parse",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Parse malformed JSON from AI/LLM responses. Handles markdown code blocks, trailing commas, comments, unquoted keys, and more.",
   "keywords": [
     "json",
