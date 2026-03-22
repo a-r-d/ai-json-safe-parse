@@ -1,0 +1,58 @@
+{
+  "name": "ai-json-safe-parse",
+  "version": "0.1.0",
+  "description": "Parse malformed JSON from AI/LLM responses. Handles markdown code blocks, trailing commas, comments, unquoted keys, and more.",
+  "keywords": [
+    "json",
+    "parse",
+    "ai",
+    "llm",
+    "openai",
+    "claude",
+    "gpt",
+    "gemini",
+    "chatgpt",
+    "malformed-json",
+    "json-repair",
+    "safe-parse"
+  ],
+  "author": "Aaron Decker <aaron@ard.ninja> (https://ard.ninja)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a-r-d/ai-json-safe-parse"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run lint && npm test && npm run build"
+  },
+  "devDependencies": {
+    "tsup": "^8.4.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.1.0"
+  }
+}
