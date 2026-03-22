@@ -1,0 +1,61 @@
+src/parse.ts
+  0a3a4ceefeb38ceb 1-2,4-50,53-55,57-67,70-73,75-78,80-150
+  36a5ba1cb1510023 3,51-52,56,68-69,74,79
+src/__tests__/parse.test.ts
+  0a3a4ceefeb38ceb 1-162,181-227,234-346
+  36a5ba1cb1510023 163-180,228-233
+src/extract.ts
+  36a5ba1cb1510023 6-7,9-17,20,24-27,29-32,35-42,46-51,54,56-57,60-61,70-72,77
+  0a3a4ceefeb38ceb 1-5,8,18-19,21-23,28,33-34,43-45,52-53,55,58-59,62-69,73-76,78-119
+README.md
+  0a3a4ceefeb38ceb 1-247
+vitest.config.ts
+  0a3a4ceefeb38ceb 1-7
+tsup.config.ts
+  0a3a4ceefeb38ceb 1-12
+tsconfig.json
+  0a3a4ceefeb38ceb 1-18
+src/types.ts
+  0a3a4ceefeb38ceb 1-29
+src/index.ts
+  0a3a4ceefeb38ceb 1-2
+package.json
+  0a3a4ceefeb38ceb 1-50,52-58
+  36a5ba1cb1510023 51
+src/sanitize.ts
+  0a3a4ceefeb38ceb 1-30,36,42,46,49,54,301,310
+  36a5ba1cb1510023 31-35,37-41,43-45,47-48,50-53,55-300,302-309
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.8",
+  "base_commit_sha": "d7487f63194b76ac4fa8e992ec49c4f9d63972b6",
+  "prompts": {
+    "0a3a4ceefeb38ceb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "47b1dc2e-c835-4c26-81d2-1d03e0340500",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "aaron decker <aaron@ard.ninja>",
+      "messages": [],
+      "total_additions": 1052,
+      "total_deletions": 41,
+      "accepted_lines": 949,
+      "overriden_lines": 0
+    },
+    "36a5ba1cb1510023": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019d15d4-5bbc-7031-91ac-f54ae22255fd",
+        "model": "gpt-5.4"
+      },
+      "human_author": "aaron decker <aaron@ard.ninja>",
+      "messages": [],
+      "total_additions": 369,
+      "total_deletions": 82,
+      "accepted_lines": 349,
+      "overriden_lines": 0
+    }
+  }
+}
